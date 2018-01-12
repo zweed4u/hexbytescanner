@@ -54,7 +54,7 @@ However, if patchBytes is empty. It work only in scan mode and results will be s
 }
 ```
 
-### Note
+## Notes
 Patterns and patch bytes can be either submitted without spacing as "F91F8212????00" or "F9 1F 82 12 ?? ?? 00"
 
 ## License
