@@ -104,7 +104,7 @@ using namespace std;
                 NSLog(@"Task count: %i",[jsondict count]);
                 for (NSDictionary *object in jsondict) {
                     NSString *patchBytes = object[@"patchBytes"];
-                    NSString *pattern = object[@"pattern"];
+                    NSString *pattern = [object[@"pattern"] stringByReplacingOccurrencesOfString:@" " withString:@""];
                     uint64_t patchDistance = 0x1;
                     long check = ([patchBytes length] % 2);
                     if (check != 0) {
