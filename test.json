@@ -1,0 +1,12 @@
+[
+  {
+    "pattern": "F91F8212????00321C3A8252??00009018932491744A40B90700????7A4A00B921008252E2030032E00313AAA0023FD6744A00B9",
+    "patchBytes": "1F2003D5",
+    "patchDistance": "0x1"
+  },
+  {
+    "pattern": "8252????8A1A2AC103B97F6200B9",
+    "patchBytes": "",
+    "patchDistance": "0x1"
+  }
+]
