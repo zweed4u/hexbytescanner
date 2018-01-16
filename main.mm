@@ -171,11 +171,11 @@ using namespace std;
     NSLog(@"Patching with bytes: %@",StringBytes);
     NSLog(@"Data Lenght %llu",lenght);
     NSData *tmp = [inputData subdataWithRange:NSMakeRange(PatchAddress, [StringBytes length]/2)];
-    NSLog(@"[0x%llx]Current opcode: %@",PatchAddress,[self Trim:[NSString stringWithFormat:@"%@",tmp]]);
+    NSLog(@"[0x%llx]Current opcode: %@",PatchAddress,[self RemoveWhitespaces:[self Trim:[NSString stringWithFormat:@"%@",tmp]]]);
     [data replaceBytesInRange:NSMakeRange(PatchAddress, [StringBytes length]/2) withBytes:[[self dataFromString:StringBytes] bytes]];
     inputData = [NSData dataWithData:data];
     tmp = [inputData subdataWithRange:NSMakeRange(PatchAddress, [StringBytes length]/2)];
-    NSLog(@"[0x%llx]Replaced opcode: %@",PatchAddress,[self Trim:[NSString stringWithFormat:@"%@",tmp]]);
+    NSLog(@"[0x%llx]Replaced opcode: %@",PatchAddress,[self RemoveWhitespaces:[self Trim:[NSString stringWithFormat:@"%@",tmp]]]);
     return inputData;
 }
 
@@ -269,6 +269,9 @@ using namespace std;
     return [[input stringByReplacingOccurrencesOfString:@"<" withString:@""]stringByReplacingOccurrencesOfString:@">" withString:@""];
 }
 
++(NSString*)RemoveWhitespaces:(NSString*)input{
+    return [input stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
 
 +(NSData *)dataFromString:(NSString *)string{
     string = [string lowercaseString];
