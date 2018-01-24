@@ -6,6 +6,8 @@ Unlike most byte pattern scanners, it's static one. It allows to search binaries
 
 Additionally, pattern searching and patching can be combined and done automatically by adding json object, called tasks or hooks, each one can be either patching or regular search task. There is also possbility to define distance between pattern and patch location. It allows fairly automatic binary patching.  
 
+Repository [hexbytescanner-hooks](https://github.com/karek314/hexbytescanner-hooks) with some useful/example hooks published by contributors.
+
 ## Build
 
 ```
